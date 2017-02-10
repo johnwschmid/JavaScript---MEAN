@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotes</title>
+</head>
+<body>
+	<h2>Here Are Your Quotes!</h2>
+	<% for (idx in quotes) { %>
+		<p> Quote: "<%= quotes[idx].quote %>" </p>
+		<p> - <%= quotes[idx].name %> </p>
+	<hr>
+	<% } %>
+	<form action="/" method="get">
+		<input type="submit" value="Home">
+	</form>
+</body>
+</html>

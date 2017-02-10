@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quoting Dojo</title>
+</head>
+<body>
+	<h2>Welcome to Quoting Dojo</h2>
+	<form action="/quotes" method="post">
+		Name: 
+		<input type="text" name="name"><br><br>
+		Quote: 
+		<textarea name="quote" rows="8" cols="40"></textarea><br><br>
+		<input type="submit" value="Add Quote">
+	</form><hr>
+	<form action="/quotes" method="get">
+		<input type="submit" value="View Quotes">
+	</form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Message Board</title>
+	<style type="text/css">
+		span {
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+	<h2>The Dojo Message Board</h2><hr>
+
+	<form action="/" method="post">
+		<h3>Write New Post</h3>
+		Name: <input type="text" name="name"><br><br>
+		<span> Message: </span><textarea name="message" rows="3" cols="25"></textarea><br><br>
+		<input type="submit" value="Post Message"><hr>
+	</form>
+	<% for (idx in embedPost) { %>
+
+		<h4> Message: <%= embedPost[idx].message %> </h4>
+		<h5> Post By: <%= embedPost[idx].name %> </h5><hr>
+
+		<h5>Comments:</h5>
+		<% for (x in embedPost[idx]._comments){ %>
+			<% if (embedPost[idx]._comments[x].comment){ %>
+				<p> Comment By: <%= embedPost[idx]._comments[x].name %> </p>
+				<p> <%= embedPost[idx]._comments[x].comment %> </p><hr>
+			<% } %>
+		<% } %>
+
+		<form action= "/comment/<%=embedPost[idx]._id%>" method="post">
+			Name: <input type="text" name="name">
+			Comment: <textarea name="comment" rows="3" cols="25"></textarea><br>
+			<input type="submit" value="Post Comment"><hr>
+		</form>
+
+	<% } %>
+
+</body>
+</html>
