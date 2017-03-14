@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<title>First Angular Page</title>
+	<script src="bower_components/angular/angular.js"></script>
+	<script>
+		var app = angular.module('app', []);
+		app.controller('divController',['$scope', function($scope){
+			$scope.name = 'Bruh';
+			$scope.age = 'Young AF';
+			$scope.noOneRule = 'GET YO SHIT!';
+		}]);
+	</script>
+</head>
+
+<body>
+	<div ng-controller="divController">
+		<p> My name is {{name}}, I am {{age}} and my number one rule is: {{noOneRule}}</p>
+	</div>
+</body>
+</html>
