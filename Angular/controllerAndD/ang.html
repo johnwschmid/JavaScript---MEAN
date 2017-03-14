@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<style type="text/css">
+		div {
+			vertical-align: top;
+		}
+		#listDiv{
+			border: black 2px solid;
+			width: 41%;
+			display: inline-block;
+			padding-left: 15px;
+			margin-top: 10px;
+		}#formDiv{
+			width: 55%;
+			display: inline-block;
+		}h4{
+			margin: 15px 5px 20px;
+		}#subz{
+			margin-top: 10px;
+		}
+	</style>
+	<title>One Controller</title>
+	<script src='bower_components/angular/angular.js' ></script>
+	<script>
+		var appDoe = angular.module('app', []);
+		appDoe.controller('fewdCont', ['$scope', function($scope){
+			$scope.fudz = [];
+			$scope.addFewd = function(){
+				$scope.fudz.push($scope.fewd);
+				$scope.fewd = "";
+			};
+		}]);
+	</script>
+</head>
+
+<body><div ng-controller="fewdCont">
+	<div id="formDiv">
+		<h4>Add Fewds!</h4>
+		<form ng-submit="addFewd()">
+				<label>Favorite Fewd Bish:</label>
+				<input type="text" ng-model="fewd">
+				<input type="submit" value="Add Fewd" id="subz">
+		</form>
+		<hr>
+		<p ng-if="fewd"> Currently Typing: {{fewd}} </p>
+	</div>
+	<div id="listDiv" ng-if="fudz">
+		<p><u>Fudz List</u></p>
+		<input placeholder="Filter.." type="text" ng-model="foodFilter">
+		<ul>
+			<li ng-repeat="fud in fudz | filter:foodFilter track by $index">{{fud}}</li>
+		</ul>
+	</div>
+</div></body>
+</html>
