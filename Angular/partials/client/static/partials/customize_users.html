@@ -7,7 +7,6 @@
          <input id="lastName" type="text" ng-model="newUser.lastName"/><br>
          <label for="language">Favorite Language</label>
          <input id="language" type="text" ng-model="newUser.language"/><br>
-         <!--When the button is clicked, run the create function-->
          <button type="submit" ng-click="create()">Create user</button>
       </form>
       <table>
@@ -24,7 +23,6 @@
                <td ng-bind="user.firstName"></td>
                <td ng-bind="user.lastName"></td>
                <td ng-bind="user.language"></td>
-               <!--When the button is clicked, run the delete function-->
                <td><button ng-click="delete($index)">Delete User</button></td>
             </tr>
          </tbody>

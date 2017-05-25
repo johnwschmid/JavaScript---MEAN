@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
-	<title>Yoyo Fam</title>
+	<title>Custom Users/Partials</title>
+	<style>
+		div {
+		    margin-top: 20px;
+		    margin-bottom: 10px;
+		}
+		table {
+		    margin-top: 30px;
+		    width: 100%;
+		    border-collapse: collapse;
+		    border-spacing: 0;
+		}
+		td, th {
+		    border: 1px solid #CCC;
+		}
+		input {
+		    display: block;
+		}
+	</style>
+	<script src="/angular/angular.js"></script>
+	<script src="/angular-route/angular-route.js"></script>
+	<script src="main.js"></script>
 </head>
 <body>
-
+	<a href="#/user">Customize Users</a> <a href="#/list">User List</a>
+	<div ng-view=""></div>
 </body>
 </html>
